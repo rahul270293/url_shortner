@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to short.com</h1>
+    <h2>Please Inter URL here</h2>
+    <form action="/shortUrls" method="POST">
+         <label for="Url">URL</label>
+         <input type="url" name="Url" id="Url" placeholder="Enter your URL">
+         <button type="submit">SHORTEN</button>
+    </form>
+
+    <h2>Here's your short URL!</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Short URL</th>
+                <th>No of Clicks</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <% shortUrl.forEach(shorturl=>{ %>
+                <tr>
+                    <td><a href="<%= shorturl.short %>"> <%= shorturl.short %></a></td>
+                    <td><%= shorturl.clicks %></td>
+                </tr>
+            <% }) %>
+           
+        </tbody>
+    </table>
+   
+    
+</body>
+</html>
